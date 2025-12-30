@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathogram</title>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/Logo-white.svg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <h1 class="main-title">Your Content</h1>
+
+        <section class="preview-card">
+            <div class="card-actions">
+                <button class="buttons">
+                    <i class="fa-regular fa-pen-to-square"></i> Edit
+                </button>
+                <button class="buttons">
+                    <i class="fa-regular fa-eye"></i> View Quiz
+                </button>
+            </div>
+        </section>
+
+        <section class="content-header">
+            <div class="title-row">
+                <h2>Untitled</h2>
+                <div class="bookmark-wrapper" id="bookmarkTrigger">
+                    <i class="fa-regular fa-bookmark" id="bookmarkIcon"></i>
+                    <span id="bookmarkCount">0</span>
+                </div>
+            </div>
+
+            <div class="user-info">
+                <i class="fas fa-user-circle fa-2x text-secondary"></i>
+                <span class="username-text">Username</span>
+            </div>
+        </section>
+
+        <section class="description-card">
+            <div class="desc-content">
+                <label>Description:</label>
+                <p>no description.</p>
+            </div>
+            
+            <div class="desc-category">
+                <label>Category:</label>
+                <button class="buttons">Aljabar</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

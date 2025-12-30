@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathogram</title>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/Logo-white.svg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="logo-area">
+            <i><img src="img/Logo.svg" width="50"></i>
+            </div>
+        
+        <nav class="">
+            <a class="nav-link" href="index.html"><i class="far fa-compass"></i> <span class="">Dashboard</span></a>
+            <a class="nav-link" href="history.html"><i class="fas fa-history"></i> <span  class="">History</span></a>
+            <a class="nav-link" href="bookmark.html"><i class="far fa-bookmark"></i> <span  class="">Bookmark</span></a>
+        </nav>
+ 
+        <div class="sidebar-footer">
+            <nav>
+                <a class="nav-link" href="javascript:void(0)" id="settings-btn">
+                    <i class="fas fa-cog"></i> <span>Settings</span>
+                </a>
+            </nav>
+        
+            <div id="settings-popup" class="settings-popup">
+                <div class="popup-header">
+                    <span>Appearance</span>
+                    <i class="fas fa-times" id="close-popup"></i>
+                </div>
+                <div class="popup-body">
+                    <div class="setting-item">
+                        <label for="theme-select">Theme</label>
+                        <select id="theme-select" class="theme-dropdown">
+                            <option value="light">Light Mode</option>
+                            <option value="dark">Dark Mode</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="top-bar">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+
+            <div class="profile-area">
+                <button class="upload" onclick="openModal()"><i class="material-icons">&#xe2c6;</i>Upload</button>
+    
+                <div class="user-info" onclick="window.location.href='profile.html'">
+                    <i class="fas fa-user-circle fa-2x text-secondary"></i>
+                    <span class="username-text">Profile</span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="hero-banner d-flex align-items-end">
+            <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTg_GqzAK0B_-aBgXTKJVI2KEKH69fGBTvdg&s">
+            <div class="hero-overlay w-100 d-flex justify-content-between align-items-center">
+                <div class="banner-img">
+                    <h5 class="">The Number Conqueror: Basic Arithmetic Challeng</h5>
+                    <small>Metricus</small>
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <div class="quiz-content">
+                <div class="quiz-number">
+                    1.
+                </div>
+                <div class="quiz-inside">
+                    <div class="">
+                        How many different ways can you arrange the 3 letters of the word 'MATH'?
+                    </div>
+                    <div class="input-group">
+                        <label>Answer</label>
+                        <div class="answers-container">
+                            <label class="answer-option">
+                                <div class="answer-justify">
+                                    <input type="radio" name="quiz-answer" value="a">
+                                    <span class="custom-radio"></span>
+                                    <div type="text" class="answer-input">
+                                        24
+                                    </div>
+                                </div>    
+                            </label>
+                            <label class="answer-option">
+                                <div class="answer-justify">
+                                    <input type="radio" name="quiz-answer" value="b" checked>
+                                    <span class="custom-radio"></span>
+                                    <div type="text" class="answer-input">
+                                        12
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="answer-option">
+                                <div class="answer-justify">
+                                    <input type="radio" name="quiz-answer" value="b" checked>
+                                    <span class="custom-radio"></span>
+                                    <div type="text" class="answer-input">
+                                        4
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="answer-option">
+                                <div class="answer-justify">
+                                    <input type="radio" name="quiz-answer" value="b" checked>
+                                    <span class="custom-radio"></span>
+                                    <div type="text" class="answer-input">
+                                        6
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="popup-footer">
+                        <button id="q-next" class="buttons" onclick="window.location.href='quiz2.html'">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 <strong>Mathogram</strong> - Multiple Educational Mathematics Operation</p>
+                <div class="footer-links">
+                    <a href="#">Terms & service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+    <div class="ovr" id="overlay">
+        <div id="up-popup" class="popup-content">
+            <div class="popup-head">
+                <h2>Upload Content</h2>
+                <div class="header-icons">
+                    <a class="clean-link" href="">ⓘ</a>
+                    <button class="circle" onclick="closeModal()">&times;</button>
+                </div>
+            </div>
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="slide" id="up-detail">
+                        <div class="sm-main">
+                            <div class="popup-steps">
+                                <div class="sm-rec"></div>
+                                <div class="sm-div">
+                                    <div class="sm-circle active">1</div>
+                                </div>
+                                <div class="sm-div">
+                                    <div class="sm-circle">2</div>
+                                </div>
+                                <div class="sm-div">
+                                    <div class="sm-circle">3</div>
+                                </div>
+                            </div>
+                        </div>
+            
+            
+                        <div class="">
+                            <h3 class="popup-title">Detail</h3>
+                            <div class="popup-main">
+                                <div class="popup-colu1">
+                                    <div class="input-group">
+                                        <label>Title (required)</label>
+                                        <textarea placeholder="add a title that explain your content" rows="4"></textarea>
+                                        <span class="char-count">0/100</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Description</label>
+                                        <textarea placeholder="tell people whats your content about..." rows="4"></textarea>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Thumbnail</label>
+                                        <div class="popup-box">
+                                            <span><i class="fa">&#xf03e;</i></span>
+                                            <button class="buttons">Upload File</button>
+                                        </div>
+                                        <p class="hint">Choose File from your device (png, or jpg)</p>
+                                    </div>
+                                </div>
+            
+                                <div class="popup-colu1">
+                                    <div class="popup-box">
+                                        <div class="circle">↓</div>
+                                        <button class="buttons">Upload File</button>
+                                    </div>
+                                    <p class="hint text-center">Choose File from your device (mp4, png, jpg)</p>
+                                </div>
+                            </div>
+                            <!-- <div class="popup-footer">
+                                <button class="buttons" onclick="moveSlide(1)">Next</button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="slide" id="up-quiz">
+                        <div class="sm-main">
+                            <div class="popup-steps">
+                                <div class="sm-rec"></div>
+                                <div class="sm-div">
+                                    <div class="sm-circle">1</div>
+                                </div>
+                                <div class="sm-div">
+                                    <div class="sm-circle active">2</div>
+                                </div>
+                                <div class="sm-div">
+                                    <div class="sm-circle">3</div>
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                        <div class="">
+                            <h3 class="popup-title">Quiz</h3>
+                            <div class="popup-main0">
+                                <div class="popup-main list-card">
+                                    <div class="input-group">
+                                        <label>Question 1</label>
+                                        <div class="popup-colu1">
+                                            <div class="popup-box">
+                                                <div class="circle">↓</div>
+                                                <button class="buttons">Upload File</button>
+                                            </div>
+                                        </div>
+                                        <textarea placeholder="add a title that explain your content" rows="4"></textarea>
+                                        <span class="char-count">0/100</span>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Answers</label>
+                                        <div class="popup-colu2">
+                                        </div>
+        
+                                        <div class="search-container ans">
+                                            <label class="checkbox-container">
+                                                <input type="checkbox" checked="checked">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <input type="text" class="search-input" placeholder="Input answer">
+                                        </div>
+        
+                                        <div class="popup-main0 list-card">
+                                            <div class="text-Mid">+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup-main0 list-card">
+                                    <div class="text-Mid">+</div>
+                                </div>
+                            </div>
+                            <!-- <div class="popup-footer">
+                                <button class="buttons" onclick="moveSlide(-1)">Back</button>
+                                <button class="buttons" onclick="moveSlide(1)">Next</button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="slide" id="up-quiz">
+                        <div class="sm-main">
+                            <div class="popup-steps">
+                                <div class="sm-rec"></div>
+                                <div class="sm-div">
+                                    <div class="sm-circle">1</div>
+                                </div>
+                                <div class="sm-div">
+                                    <div class="sm-circle">2</div>
+                                </div>
+                                <div class="sm-div">
+                                    <div class="sm-circle active">3</div>
+                                </div>
+                            </div>
+                        </div>
+        
+        
+                        <div class="">
+                            <h3 class="popup-title">Checkup</h3>
+                            <div class="popup-main0">
+                                <div class="list-card">
+                                    <div class="input-group">
+                                        <label>Preview</label>
+                                        <div class="popup-main0">
+                                            <div class="popup-colu1">
+                                                <div class="popup-box">
+                                                    <img src = https://shared.steamstatic.com/store_item_assets/steam/apps/3527290/47d49076d283d481c2057cfe5474294059c3264b/header_alt_assets_0.jpg?t=1754999459>
+                                                </div>
+                                                <div class="footer-row">
+                                                    <h3>Choose File from your device (png, or jpg)</h3>
+                                                    <div class="bookmark-wrapper" id="bookmarkTrigger">
+                                                        <i class="fa-regular fa-bookmark" id="bookmarkIcon"></i>
+                                                        <span id="bookmarkCount">0</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button id="back" class="buttons" onclick="moveSlide(-1)">Back</button>
+                <button id="next" class="buttons" onclick="moveSlide(1)">Next</button>
+                <button id="upload" class="buttons" onclick="upModal()">Upload</button>
+            </div>
+        </div>
+    </div>
+    <div class="success-overlay" id="success">
+        <div class="success-card">
+            <div class="success-header">
+                <button class="circle" onclick="noupModal()">&times;</button>
+            </div>
+            <div class="success-top">
+                <div class="icon-circle">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+            
+            <div class="white-divider">
+                <div class="running-white-line"></div>
+            </div>
+            
+            <div class="success-bottom">
+                <h1 class="success-text">SUCCESSFULLY UPLOADED</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathogram</title>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/Logo-white.svg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+body {
+    background-image: url('img/Login.svg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--primary-blue); 
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+footer{
+    background-color: #ffffff00;
+    border-top: #ffffff00;
+    text-shadow: 0 2px 5px #00000033;
+
+}
+footer>div{
+    justify-content: center;
+}
+/* 2. Biarkan pembungkus konten mengambil semua sisa ruang */
+.main-wrapper {
+    flex: 1; /* Ini yang mendorong footer ke dasar layar */
+}
+
+@media (max-width: 768px){
+    body{
+        height: 105vh;
+    }
+}
+</style>
+<body>
+    <div class="main-wrapper">
+        <div class="login">
+            <div class="box-login">
+                <div class="button-group">
+                    <a href="nolog.html" class="back-arrow">&larr;</a>
+                </div>
+                <img src="img/Logo.svg">
+                <h1>SIGN IN</h1>
+                <form>
+                    <div class="login-input">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Account Username">
+                    </div>
+    
+                    <div class="login-input">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Example123">
+                    </div>
+    
+                    <div class="helper-text" onclick="window.location.href='register.html'">Still haven't account yet? Sign up!</div>
+    
+                    <div class="button-group">
+                        <button onclick="window.location.href='profile.html'" type="button" class="buttons">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <p>&copy; 2025 <strong>Mathogram</strong> - Multiple Educational Mathematics Operation</p>
+            <div class="footer-links">
+                <a href="#">Terms & service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
