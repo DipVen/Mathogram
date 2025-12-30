@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathogram</title>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/Logo-white.svg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <script src="js/script.js"></script> -->
+    <div class="" id="">
+        <div id="" class="popup-content">
+            <div class="popup-head">
+                <h2>Username</h2>
+                <div class="header-icons">
+                    <a class="clean-link" href="">ⓘ</a>
+                    <button class="circle" onclick="closeModal()">&times;</button>
+                </div>
+            </div>
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="slide" id="up-detail">
+                        <div class="popup-main0">
+                            <div class="popup-colu1">
+                                <div class="popup-box">
+                                    <img src = https://shared.steamstatic.com/store_item_assets/steam/apps/3527290/47d49076d283d481c2057cfe5474294059c3264b/header_alt_assets_0.jpg?t=1754999459>
+                                </div>
+                                <div class="footer-row">
+                                    <h3>Choose File from your device (png, or jpg)</h3>
+                                    <div class="bookmark-wrapper" id="bookmarkTrigger">
+                                        <i class="fa-regular fa-bookmark" id="bookmarkIcon"></i>
+                                        <span id="bookmarkCount">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button class="buttons" onclick="window.location.href='quiz.html'">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
