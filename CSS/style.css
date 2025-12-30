@@ -425,6 +425,7 @@ img{
     padding: 50px;
     background-color: var(--bg-color);
     flex-wrap: wrap;
+
 }
 
 .stat-card {
@@ -580,6 +581,7 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto;
 }
 
 .stat-title {
@@ -811,6 +813,15 @@ img{
 
 /* --- LAYAR MOBILE / BOTTOM NAV (768px kebawah) --- */
 @media (max-width: 768px) {
+    .stats-container{
+        display: grid;
+        grid-template-columns: auto;
+        overflow-y: auto;
+    }
+    .stat-item{
+        display: grid;
+        grid-template-columns: auto;
+    }
     .sidebar {
         width: 100% !important;
         height: 65px !important;
